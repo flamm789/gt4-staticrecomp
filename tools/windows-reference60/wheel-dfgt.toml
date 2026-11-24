@@ -1,0 +1,27 @@
+# Starting point for DFGT on Windows. Verify the actual axis and button numbers.
+version = 1
+
+[wheel]
+enabled = true
+mode = "dfp"
+preset = "logitech_dfgt"
+
+[steering]
+source = "axis:0"
+rotation_degrees = 900
+
+[throttle]
+source = "axis:1"
+mode = "inverted"
+
+[brake]
+source = "axis:2"
+mode = "inverted"
+
+[buttons]
+shift_up = ["btn:4", "btn:12"]
+shift_down = ["btn:5", "btn:13"]
+
+[ffb]
+enabled = true
+strength = 0.25

@@ -1,5 +1,12 @@
 # Current Status
 
+## Windows 60 FPS reference preparation (2026-11-24, local branch)
+
+`gt4-native-100fps` is based on `b0008e8a`. The Windows reference kit pins the published rc14 control and prepares a
+plain v2.00 source build with the USB capsule. The exact slice217 EE library and slice200 port entry point remain
+private inputs. TASK-090 is staged for later evaluation at `b987f50e`. The Windows build and target hardware gates
+are pending. See [the Windows reference kit](../tools/windows-reference60/README.fr.md).
+
 ## 1.3.0-rc14: closing as a pre-release (2026-11-04, afternoon)
 
 On top of the slice407 test build: the full trigger range on by default with a fixed-width meter (TASK-161), the shader
