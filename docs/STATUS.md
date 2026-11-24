@@ -1,5 +1,12 @@
 # Current Status
 
+## PAL SCES-51719 compatibility intake (2026-11-25, development branch)
+
+The Windows kit now reports local disc fingerprints and the PCSX2 boot ELF CRC for SCES-51719. The kit documents a
+PCSX2 trial with a per-game pad or wheel profile and a copy of the original PAL memory card. The published native
+targets remain v2.00 and Spec II. PAL AOT inputs, native timing and Windows hardware validation are pending.
+See [the PAL guide](../tools/windows-reference60/PAL.fr.md).
+
 ## Windows 60 FPS reference preparation (2026-11-24, local branch)
 
 `gt4-native-100fps` is based on `b0008e8a`. The Windows reference kit pins the published rc14 control and prepares a

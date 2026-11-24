@@ -146,7 +146,7 @@ function Prepare-Disc {
     param($Layout, $Pins, [string]$Image)
     if (-not (Test-Path -LiteralPath $Image -PathType Leaf)) { throw "ISO not found: $Image" }
     if ((Get-Item -LiteralPath $Image).Length -ne $Pins.Disc.disc.size_bytes) {
-        throw 'Wrong ISO size. The required disc is USA v2.00, SCUS-97328 (5314478080 bytes).'
+        throw 'This build requires USA v2.00 SCUS-97328 (5314478080 bytes). For SCES-51719, see PAL.fr.md and Inspect-PAL.ps1.'
     }
     if (-not (Test-Path -LiteralPath $Layout.Input)) {
         Invoke-Tool $Layout.Python @((Join-Path $Layout.Source 'scripts/ee_producer.py'), 'prepare',
@@ -367,9 +367,9 @@ function Build-Reference {
     if (Test-Path -LiteralPath $buildReceipt) { Remove-Item -LiteralPath $buildReceipt }
     Invoke-Tool $tools.Cmake $configureArgs
     Invoke-Tool $tools.Cmake @('--build', $Layout.Build, '--parallel', '2', '--target', 'gt4vulkan',
-        'pacing_fixture', 'frame_skip_fixture', 'usb_dfp_fixture', 'wheel_fixture', 'hw_gs_smoke')
+        'pacing_fixture', 'frame_skip_fixture', 'pad_mapping_fixture', 'usb_dfp_fixture', 'wheel_fixture', 'hw_gs_smoke')
     Invoke-Tool $tools.Ctest @('--test-dir', $Layout.Build, '--no-tests=error', '--output-on-failure',
-        '-R', '^native_(pacing|frame_skip|usb_dfp|wheel)$')
+        '-R', '^native_(pacing|frame_skip|pad_mapping|usb_dfp|wheel)$')
     $receipt.executable_sha256 = Get-Sha256 (Join-Path $Layout.Build 'gt4vulkan.exe')
     Write-Json $buildReceipt $receipt
     Write-Host "Build and selected CTest checks finished: $($Layout.Build)"

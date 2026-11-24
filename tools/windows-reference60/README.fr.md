@@ -2,6 +2,8 @@
 
 Le kit prépare deux références à 60 FPS. **Published** lance l’exécutable officiel 1.3.0-rc14 vérifié. Il permet de commencer les mesures avec votre ISO. **Source** construit un exécutable local à partir de `main`, avec la capsule USB nécessaire au test du Driving Force GT. La validation de ce second exécutable précède l’intégration de CoreGS 3.0.
 
+Ces deux références utilisent le disque USA v2.00. Pour **l’édition européenne SCES-51719**, suivez le [guide PAL](PAL.fr.md) pour identifier votre ISO, tester la manette et utiliser votre sauvegarde dans PCSX2 sous Windows.
+
 ## Révisions retenues
 
 | Rôle | Révision exacte |
